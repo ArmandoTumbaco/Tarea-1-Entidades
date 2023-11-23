@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+model Envio {
+  id         Int      @id @default(autoincrement())
+  direccion  String
+  ciudad     String
+  estado     String
+  codigoPostal String
+  
+}
+model OpinionCliente {
+  id         Int      @id @default(autoincrement())
+  calificacion Int
+  comentario  String?
+
+}
+model Carrito {
+  id          Int      @id @default(autoincrement())
+  cantidad    Int
+}
+
